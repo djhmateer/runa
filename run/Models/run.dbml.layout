@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="run">
+  <DataContextMoniker Name="/DB" />
+  <nestedChildShapes>
+    <classShape Id="ffcd41b3-db8a-473b-b99e-e03474ba57d1" absoluteBounds="0.75, 1.375, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/DB/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8773fb8c-939f-4fff-812f-215bd8b2cfd5" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0685288-bcc9-4318-974a-d0d27a918b77" absoluteBounds="3.5, 0.875, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/DB/Activity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dbeb1b3-ff8b-435a-8e2d-9855d3db9e22" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa7aed61-8827-4d4b-8af7-e8662bbd9260" absoluteBounds="0.75, 4.375, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/DB/Sport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eb3e6d9-5b20-4a01-a8fd-096089150492" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.92307657877604); (3.5 : 1.92307657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB/Person/Person_Activity" />
+      <nodes>
+        <classShapeMoniker Id="ffcd41b3-db8a-473b-b99e-e03474ba57d1" />
+        <classShapeMoniker Id="e0685288-bcc9-4318-974a-d0d27a918b77" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.92307657877604); (4.5 : 4.92307657877604); (4.5 : 2.95723714192708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DB/Sport/Sport_Activity" />
+      <nodes>
+        <classShapeMoniker Id="aa7aed61-8827-4d4b-8af7-e8662bbd9260" />
+        <classShapeMoniker Id="e0685288-bcc9-4318-974a-d0d27a918b77" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="04d95cdf-f180-4e47-a96e-e9720b310a45" absoluteBounds="5.75, 4, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/DB/weekly_summary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c345ad34-b857-468e-ab58-17cff7aa0de1" absoluteBounds="5.765, 4.46, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

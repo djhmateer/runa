@@ -9,6 +9,8 @@
     <h2>Index</h2>
 
   <% foreach (WeekSummary weekSummary in Model) {
+         if (weekSummary.Persondata.Count == 0)
+             continue;
              %>
             <table>
             <tr>

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +20,7 @@ namespace run.Models
             return activites;
         }
 
-        // return a list of all summaries
+        // return a list of all summaries - used by my simple code
         public IQueryable<weekly_summary> GetSummaries()
         {
             var summaries = from s in db.weekly_summaries
@@ -34,7 +33,9 @@ namespace run.Models
             var weekSummaries = from p in db.Persons
                                 orderby p.personname
                                 let data = GetWeeklySummaryData(p.personid)
-                                select new WeekSummary {Personid = p.personid, Personname = p.personname, Persondata = new List<WeekSummaryData>(data)};
+                                select new WeekSummary {Personid = p.personid, 
+                                                                    Personname = p.personname, 
+                                                                    Persondata = new List<WeekSummaryData>(data)};
             return weekSummaries;
         }
 
@@ -43,7 +44,10 @@ namespace run.Models
             var summary = from w in db.weekly_summaries
                           where w.personid == personid
                           orderby w.Year , w.Week
-                          select new WeekSummaryData {Hours = w.hours, Kilometers = w.kilometres, Week = w.Week, Year = w.Year};
+                          select new WeekSummaryData {Hours = w.hours, 
+                                                                    Kilometers = w.kilometres, 
+                                                                    Week = w.Week, 
+                                                                    Year = w.Year};
             return summary;
         }
 
@@ -80,16 +84,17 @@ namespace run.Models
             db.Activities.DeleteOnSubmit(activity);
             db.SubmitChanges();
         }
-
     }
 
-    public class WeekSummary {
+    public class WeekSummary
+    {
         public int Personid;
         public string Personname;
         public List<WeekSummaryData> Persondata;
     }
 
-    public class WeekSummaryData {
+    public class WeekSummaryData
+    {
         public double? Hours;
         public double? Kilometers;
         public int? Week;

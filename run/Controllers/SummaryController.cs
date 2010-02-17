@@ -1,4 +1,3 @@
-using System;
 using System.Web.Mvc;
 using run.Models;
 
@@ -13,20 +12,10 @@ namespace run.Controllers
             _repository = new SqlActivityRepository();
         }
 
-        //
-        // GET: /Summary/
-
         public ActionResult Index()
         {
-            var summaries = _repository.GetSummaries();
+            var summaries = _repository.GetWeeklySummary();
             return View(summaries);
         }
-    }
-
-    public class Summary
-    {
-        public DateTime Date;
-        public double TotalK;
-        public double Hours;
     }
 }
